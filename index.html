@@ -7,109 +7,117 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body id="body">
-    <header class="header">
-      <a href="#"><img src="images/logo.svg" alt="Logo-Snap" /></a>
-      <div class="menu">
-        <button class="menuBtn">
-          <img src="images/icon-menu.svg" alt="Menu-icon" />
-        </button>
-        <div class="overlay" id="overlay"></div>
-      </div>
-    </header>
-    <nav id="sidebar-menu">
-      <div class="flex-btn">
-        <button class="close-btn">
-          <img src="images/icon-close-menu.svg" alt="Close-menu" />
-        </button>
-      </div>
-      <ul>
-        <li class="paddingLi">
-          <button class="dropdown-btn" id="features">
-            Features
-            <img
-              src="images/icon-arrow-down.svg"
-              alt="Icon-down"
-              id="featureImg"
-            />
-          </button>
-          <ul class="itemsFeatures dropdown">
-            <li>
-              <a href="#"
-                ><img src="images/icon-todo.svg" alt="Icon-todolist" />Todo
-                list</a
-              >
+    <div class="main-container">
+      <div class="main-menu">
+        <header class="header">
+          <a href="#"><img src="images/logo.svg" alt="Logo-Snap" /></a>
+          <div class="menu">
+            <button class="menuBtn">
+              <img src="images/icon-menu.svg" alt="Menu-icon" />
+            </button>
+            <div class="overlay" id="overlay"></div>
+          </div>
+        </header>
+        <nav id="sidebar-menu">
+          <div class="flex-btn">
+            <button class="close-btn">
+              <img src="images/icon-close-menu.svg" alt="Close-menu" />
+            </button>
+          </div>
+          <ul>
+            <li class="paddingLi">
+              <button class="dropdown-btn" id="features">
+                Features
+                <img
+                  src="images/icon-arrow-down.svg"
+                  alt="Icon-down"
+                  id="featureImg"
+                />
+              </button>
+              <ul class="itemsFeatures dropdown">
+                <li>
+                  <a href="#"
+                    ><img src="images/icon-todo.svg" alt="Icon-todolist" />Todo
+                    list</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><img src="images/icon-calendar.svg" alt="" />Calendar</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><img src="images/icon-reminders.svg" alt="" />Reminders</a
+                  >
+                </li>
+                <li id="Planning">
+                  <a href="#"
+                    ><img src="images/icon-planning.svg" alt="" />Planning</a
+                  >
+                </li>
+              </ul>
             </li>
-            <li>
-              <a href="#"
-                ><img src="images/icon-calendar.svg" alt="" />Calendar</a
-              >
+            <li class="paddingLi">
+              <button class="dropdown-btn" id="company">
+                Company
+                <img
+                  src="images/icon-arrow-down.svg"
+                  alt="Icon-down"
+                  id="companyImg"
+                />
+              </button>
+              <ul class="itemsCompany dropdown">
+                <li><a href="#">History</a></li>
+                <li><a href="#">Our Team</a></li>
+                <li id="Blog"><a href="#">Blog</a></li>
+              </ul>
             </li>
-            <li>
-              <a href="#"
-                ><img src="images/icon-reminders.svg" alt="" />Reminders</a
-              >
-            </li>
-            <li id="Planning">
-              <a href="#"
-                ><img src="images/icon-planning.svg" alt="" />Planning</a
-              >
-            </li>
+            <li class="careers">Careers</li>
+            <li>About</li>
           </ul>
-        </li>
-        <li class="paddingLi">
-          <button class="dropdown-btn" id="company">
-            Company
-            <img
-              src="images/icon-arrow-down.svg"
-              alt="Icon-down"
-              id="companyImg"
-            />
-          </button>
-          <ul class="itemsCompany dropdown">
-            <li><a href="#">History</a></li>
-            <li><a href="#">Our Team</a></li>
-            <li id="Blog"><a href="#">Blog</a></li>
-          </ul>
-        </li>
-        <li class="careers">Careers</li>
-        <li>About</li>
-      </ul>
-      <div class="login-btns">
-        <a href="#" id="login">Login</a>
-        <a href="#" id="register">Register</a>
+          <div class="login-btns">
+            <a href="#" id="login">Login</a>
+            <a href="#" id="register">Register</a>
+          </div>
+        </nav>
       </div>
-    </nav>
-    <main>
-      <section>
-        <img
-          src="images/image-hero-mobile.png"
-          alt="Hero-mobile"
-          width="100%"
-        />
-      </section>
-      <section class="learnMore">
-        <div class="text">
-          <h1>Make remote work</h1>
-          <span>
-            Get your team in sync, no matter your location. Streamline
-            processes, create team rituals, and watch productivity soar.
-          </span>
+      <main>
+        <section class="main-imagem">
+          <img
+            src="images/image-hero-mobile.png"
+            alt="Hero-mobile"
+            width="100%"
+          />
+        </section>
+        <section class="learnMore">
+          <div class="text">
+            <h1>Make remote work</h1>
+            <span>
+              Get your team in sync, no matter your location. Streamline
+              processes, create team rituals, and watch productivity soar.
+            </span>
+          </div>
+          <button id="learnBtn">Learn more</button>
+        </section>
+      </main>
+      <footer class="rodape">
+        <div class="footer">
+          <img
+            src="images/client-databiz.svg"
+            alt="Logo-databiz"
+            width="80px"
+          />
+          <img
+            src="images/client-audiophile.svg"
+            alt="Logo-audiophile"
+            width="50px"
+          />
+          <img src="images/client-meet.svg" alt="Logo-meet" width="70px" />
+          <img src="images/client-maker.svg" alt="Logo-maker" width="60px" />
         </div>
-        <button id="learnBtn">Learn more</button>
-      </section>
-    </main>
-    <footer>
-      <div class="footer">
-        <img src="images/client-databiz.svg" alt="Logo-databiz" width="80px" />
-        <img
-          src="images/client-audiophile.svg"
-          alt="Logo-audiophile"
-          width="50px"
-        />
-        <img src="images/client-meet.svg" alt="Logo-meet" width="70px" />
-        <img src="images/client-maker.svg" alt="Logo-maker" width="60px" />
-      </div>
-    </footer>
-    <script src="js/script.js"></script>
+      </footer>
+      <script src="js/script.js"></script>
+    </div>
   </body>
 </html>
