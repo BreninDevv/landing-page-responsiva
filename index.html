@@ -6,27 +6,68 @@
     <title>Snap - Project</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
+  <body id="body">
     <header class="header">
       <a href="#"><img src="images/logo.svg" alt="Logo-Snap" /></a>
       <div class="menu">
         <button class="menuBtn">
           <img src="images/icon-menu.svg" alt="Menu-icon" />
         </button>
+        <div class="overlay" id="overlay"></div>
       </div>
     </header>
     <nav id="sidebar-menu">
-      <button class="close-btn">
-        <img src="images/icon-close-menu.svg" alt="Close-menu" />
-      </button>
+      <div class="flex-btn">
+        <button class="close-btn">
+          <img src="images/icon-close-menu.svg" alt="Close-menu" />
+        </button>
+      </div>
       <ul>
-        <li><a href="#">Features</a></li>
-        <li><a href="#">Company</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">About</a></li>
+        <li class="paddingLi">
+          <button class="dropdown-btn" id="features">
+            Features <img src="images/icon-arrow-down.svg" alt="Icon-down" />
+          </button>
+          <ul class="itemsFeatures dropdown">
+            <li>
+              <a href="#"
+                ><img src="images/icon-todo.svg" alt="Icon-todolist" />Todo
+                list</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><img src="images/icon-calendar.svg" alt="" />Calendar</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><img src="images/icon-reminders.svg" alt="" />Reminders</a
+              >
+            </li>
+            <li id="Planning">
+              <a href="#"
+                ><img src="images/icon-planning.svg" alt="" />Planning</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="paddingLi">
+          <button class="dropdown-btn" id="company">
+            Company <img src="images/icon-arrow-down.svg" alt="Icon-down" />
+          </button>
+          <ul class="itemsCompany dropdown">
+            <li><a href="#">History</a></li>
+            <li><a href="#">Our Team</a></li>
+            <li id="Blog"><a href="#">Blog</a></li>
+          </ul>
+        </li>
+        <li class="careers">Careers</li>
+        <li>About</li>
       </ul>
-      <a href="#" id="login">Login</a>
-      <a href="#" id="register">Register</a>
+      <div class="login-btns">
+        <a href="#" id="login">Login</a>
+        <a href="#" id="register">Register</a>
+      </div>
     </nav>
     <main>
       <section>
