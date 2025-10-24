@@ -7,27 +7,26 @@ const featuresBtn = document.getElementById("features");
 const companyBtn = document.getElementById("company");
 const featuresMenu = document.querySelector(".itemsFeatures");
 const companyMenu = document.querySelector(".itemsCompany");
-
-document.addEventListener("DOMContentLoaded", (event) => {
-  // Seleciona o botão de login pelo ID 'login'
-  const loginButton = document.getElementById("login");
-
-  if (loginButton) {
-    // Adiciona um listener para o evento de clique
-    loginButton.addEventListener("click", function () {
-      // Esta única linha é o que resolve o seu problema:
-      // Ela remove o foco ('focus') do botão, fazendo com que ele perca o estilo
-      // de 'clicado/focado' e volte ao seu estado normal.
-      this.blur();
-    });
-  }
-});
+const imagemDown = "images/icon-arrow-down.svg";
+const imagemUp = "images/icon-arrow-up.svg";
+const featureImagem = document.getElementById("featureImg");
+const companyImagem = document.getElementById("companyImg");
 
 featuresBtn.addEventListener("click", () => {
   featuresMenu.classList.toggle("on");
+  if (featureImagem.src.includes(imagemDown)) {
+    featureImagem.src = imagemUp;
+  } else {
+    featureImagem.src = imagemDown;
+  }
 });
 companyBtn.addEventListener("click", () => {
   companyMenu.classList.toggle("on");
+  if (companyImagem.src.includes(imagemDown)) {
+    companyImagem.src = imagemUp;
+  } else {
+    companyImagem.src = imagemDown;
+  }
 });
 
 loginBtn.addEventListener("click", () => {
