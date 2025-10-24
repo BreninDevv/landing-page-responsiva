@@ -28,9 +28,21 @@ companyBtn.addEventListener("click", () => {
     companyImagem.src = imagemDown;
   }
 });
+const desativarBotao = () => {
+  loginBtn.classList.remove("active");
+  console.log("Botão desativado!");
+};
 
 loginBtn.addEventListener("click", () => {
   loginBtn.classList.toggle("active");
+  document.addEventListener("click", (event) => {
+    const cliqueFoiDentroDoBotao = loginBtn.contains(event.target);
+    const botaoEstaAtivo = loginBtn.classList.contains("active");
+
+    if (botaoEstaAtivo && !cliqueFoiDentroDoBotao) {
+      desativarBotao();
+    }
+  });
 });
 
 function toggleBtn() {
