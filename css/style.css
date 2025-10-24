@@ -16,6 +16,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 30px 20px;
+  position: relative;
 }
 main section img {
   padding-bottom: 10px;
@@ -58,4 +59,38 @@ span {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
+}
+#sidebar-menu {
+  position: fixed;
+  background-color: white;
+  height: 100%;
+  width: 230px;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transform: translate(
+    100%
+  ); /* Move 100% da própria largura para fora da tela */
+  transition: transform 0.3s ease-in-out;
+}
+#sidebar-menu.open {
+  transform: translateX(
+    0
+  ); /* Move de volta para a posição original (dentro da tela) */
+}
+li {
+  list-style-type: none;
+}
+a {
+  color: gray;
+  text-decoration: none;
+}
+div.menu button {
+  border: none;
+  background-color: white;
+}
+nav#sidebar-menu button {
+  border: none;
+  background-color: white;
 }
