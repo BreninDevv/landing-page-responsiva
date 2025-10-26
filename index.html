@@ -82,25 +82,32 @@
           </div>
         </nav>
       </div>
-      <main>
-        <section class="main-imagem">
+
+      <section class="main-imagem">
+        <picture>
+          <source
+            srcset="images/image-hero-desktop.png"
+            media="(min-width: 1024px)"
+          />
           <img
             src="images/image-hero-mobile.png"
             alt="Hero-mobile"
-            width="100%"
+            width="375px"
           />
-        </section>
-        <section class="learnMore">
-          <div class="text">
-            <h1>Make remote work</h1>
-            <span>
-              Get your team in sync, no matter your location. Streamline
-              processes, create team rituals, and watch productivity soar.
-            </span>
-          </div>
-          <button id="learnBtn">Learn more</button>
-        </section>
-      </main>
+        </picture>
+      </section>
+
+      <section class="learnMore">
+        <div class="text">
+          <h1>Make remote work</h1>
+          <span>
+            Get your team in sync, no matter your location. Streamline
+            processes, create team rituals, and watch productivity soar.
+          </span>
+        </div>
+        <button id="learnBtn">Learn more</button>
+      </section>
+
       <footer class="rodape">
         <div class="footer">
           <img

@@ -16,8 +16,8 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 30px 20px;
-  position: relative;
 }
+
 main section img {
   padding-bottom: 10px;
 }
@@ -134,6 +134,11 @@ ul {
 .itemsCompany {
   padding-left: 30px;
 }
+.main-imagem {
+  display: flex;
+  justify-content: center;
+  grid-area: ilustracao;
+}
 li ul {
   padding-top: 15px;
   padding-bottom: 5px;
@@ -158,17 +163,23 @@ li a img {
   padding-top: 12px;
   text-align: center;
   height: 40px;
+  width: auto;
+  border: none;
 }
 #login.active {
   background-color: gray;
   color: white;
+  border: 2px solid gray;
+  width: 185px;
+  height: 40px;
+  border-radius: 14px;
+  padding-top: 10px;
 }
 #login:hover {
   border: 2px solid gray;
   width: 185px;
   height: 40px;
   border-radius: 14px;
-  text-align: center;
   padding-top: 10px;
 }
 li img {
@@ -221,12 +232,96 @@ nav#sidebar-menu button {
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto auto;
 }
-.main-menu {
-  grid-area: menu;
+@media (min-width: 425px) {
+  .main-imagem img {
+    width: 100%;
+    max-width: 425px;
+  }
 }
-.main-imagem {
-  grid-area: ilustracao;
+@media (min-width: 768px) {
+  .main-imagem img {
+    width: 100%;
+    max-width: 768px;
+  }
 }
-.rodape {
-  grid-area: rodape;
+@media (min-width: 1024px) {
+  .main-imagem img {
+    width: 100%;
+    max-width: 375px;
+  }
+  .main-container {
+    grid-template-areas:
+      "menu menu"
+      "textAndBtn ilustracao"
+      "rodape ilustracao";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    align-items: center;
+    padding: 0 100px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  .header .menu {
+    display: none;
+  }
+  #sidebar-menu {
+    display: none;
+  }
+  .header {
+    padding: 30px 0;
+  }
+  .main-menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 100px;
+  }
+  .main-menu nav {
+    display: flex;
+  }
+  .logins-btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .learnMore {
+    /* O GRID já alinha horizontalmente, mas o conteúdo precisa ser à esquerda */
+    align-items: flex-start;
+    text-align: left;
+
+    /* Permite que o texto cresça na vertical */
+    height: 100%;
+    display: flex; /* Garante que o height: 100% funcione */
+    flex-direction: column; /* Mantém o layout vertical interno */
+    justify-content: center; /* Centraliza o conteúdo verticalmente dentro do 1fr */
+
+    /* NOVO: Ajuste o tamanho do título para desktop */
+    h1 {
+      font-size: 80px;
+      line-height: 1; /* Melhora a quebra de linha do título */
+    }
+  }
+  .rodape {
+    grid-area: rodape; /* Garante que ele use a área correta */
+    /* Remove padding excessivo vertical para telas grandes */
+    padding: 30px 0;
+  }
+  .footer {
+    /* O footer deve ter 100% da largura da área "rodape" */
+    width: 100%;
+    /* Substitui o padding original (60px 20px) que bagunçava o layout */
+    padding: 0;
+    /* Garante espaçamento entre os logos */
+    justify-content: space-between;
+  }
+  .footer {
+    display: flex;
+    padding: 60px 20px;
+    height: 20px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  header a {
+    padding: 0;
+  }
 }
