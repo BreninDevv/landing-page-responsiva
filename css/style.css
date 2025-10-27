@@ -8,40 +8,79 @@
 
 body {
   font-family: "Epilogue", sans-serif;
-  padding: 0px;
-  margin: 0px;
-  min-height: 100%vh;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
 }
+
+a {
+  color: gray;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+  color: gray;
+  padding: 10px 0;
+}
+
+/* -- LAYOUT GERAL E MOBILE FIRST -- */
+.main-container {
+  display: grid;
+  grid-template-areas:
+    "menu"
+    "ilustracao"
+    "textAndBtn"
+    "rodape";
+  grid-template-columns: 1fr;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* HEADER MOBILE */
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 30px 20px;
+  padding: 20px 20px; /* Ajuste o padding para mobile */
 }
 
-main section img {
-  padding-bottom: 10px;
+/* MOBILE IMAGE */
+.main-imagem {
+  display: flex;
+  justify-content: center;
+  grid-area: ilustracao;
+  padding-bottom: 20px; /* Espaço entre imagem e texto */
 }
+
+.main-imagem img {
+  width: 100%;
+  max-width: 375px;
+}
+
+/* TEXTO E BOTÃO MOBILE */
 .learnMore {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 0 20px;
+  padding: 0 20px 40px;
   grid-area: textAndBtn;
-}
-.text {
-  padding-bottom: 27px;
 }
 
 h1 {
   font-size: 35px;
+  margin: 0 0 16px 0; /* Ajuste a margem do título */
 }
+
 span {
   color: gray;
-  font-size: 1 rem;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
+  display: block;
+  padding-bottom: 27px;
 }
+
 #learnBtn {
   background-color: black;
   border: none;
@@ -49,18 +88,29 @@ span {
   height: 45px;
   border-radius: 15px;
   color: white;
-  text-align: center;
   font-size: medium;
   font-weight: 600;
+  cursor: pointer;
 }
+
+/* FOOTER MOBILE (Logos) */
 .footer {
   display: flex;
-  padding: 60px 20px;
-  height: 20px;
+  padding: 40px 20px;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
 }
+
+.footer img {
+  flex-shrink: 1;
+  flex-grow: 0;
+  width: auto;
+  max-width: 20%;
+  height: auto;
+}
+
+/* -- SIDEBAR MOBILE (MENU) -- */
 #sidebar-menu {
   position: fixed;
   background-color: white;
@@ -70,167 +120,90 @@ span {
   right: 0;
   z-index: 1000;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-  transform: translate(
-    100%
-  ); /* Move 100% da própria largura para fora da tela */
+  transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
 }
+
 #sidebar-menu.open {
-  transform: translateX(
-    0
-  ); /* Move de volta para a posição original (dentro da tela) */
+  transform: translateX(0);
 }
+
 .flex-btn {
   display: flex;
-  flex-direction: column;
-  align-items: end;
-  padding: 10px 15px;
+  justify-content: flex-end; /* Alinha o botão de fechar à direita */
+  padding: 20px 15px;
 }
-ul {
+
+nav#sidebar-menu ul {
   display: flex;
   flex-direction: column;
   padding: 20px;
 }
-.paddingLi {
-  padding: 0px 0;
-}
-.careers {
-  padding-top: 0px;
-}
 
-.login-btns {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-  padding-right: 10px;
-}
+/* Estilo dos Dropdowns */
 .dropdown-btn {
   color: gray;
   font-size: medium;
   font-family: "Epilogue", sans-serif;
   padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
+
 .dropdown {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
 }
-#Planning {
-  padding-bottom: 20px;
-}
-#Blog {
-  padding-bottom: 20px;
-}
+
 .dropdown.on {
   max-height: 300px;
   overflow: visible;
 }
+
+/* Itens de Dropdown */
 .itemsFeatures a {
   display: flex;
   align-items: center;
-  text-align: center;
+  padding-left: 15px;
 }
+
 .itemsCompany {
   padding-left: 30px;
 }
-.main-imagem {
+
+/* -- BOTÕES DE LOGIN MOBILE (Vertical) -- */
+.login-btns {
   display: flex;
-  justify-content: center;
-  grid-area: ilustracao;
+  flex-direction: column; /* MOBILE: Vertical */
+  align-items: center;
+  gap: 15px;
+  padding: 30px 20px; /* Adiciona espaço vertical */
 }
-li ul {
-  padding-top: 15px;
-  padding-bottom: 5px;
-}
-li a img {
-  padding-right: 10px;
-  text-align: center;
-}
-#register {
-  border: 2px solid gray;
-  width: 185px;
-  height: 40px;
-  border-radius: 14px;
-  text-align: center;
-  padding-top: 10px;
-}
-#register:hover {
-  background-color: gray;
-  color: white;
-}
+
+/* Link Login Mobile */
 #login {
-  padding-top: 12px;
+  color: gray;
+  font-weight: 500;
+  width: 100%; /* Ocupa a largura do container */
   text-align: center;
-  height: 40px;
-  width: auto;
-  border: none;
-}
-#login.active {
-  background-color: gray;
-  color: white;
-  border: 2px solid gray;
-  width: 185px;
-  height: 40px;
-  border-radius: 14px;
-  padding-top: 10px;
-}
-#login:hover {
-  border: 2px solid gray;
-  width: 185px;
-  height: 40px;
-  border-radius: 14px;
-  padding-top: 10px;
-}
-li img {
-  padding-left: 10px;
-  padding-bottom: 1.5px;
 }
 
-li {
-  list-style-type: none;
+/* Botão Register Mobile */
+#register {
   color: gray;
+  font-weight: 500;
+  border: 2px solid gray;
+  width: 100%; /* Ocupa a largura do container */
   padding: 10px 0;
-}
-a {
-  color: gray;
-  text-decoration: none;
-}
-div.menu button {
-  border: none;
-  background-color: white;
-}
-nav#sidebar-menu button {
-  border: none;
-  background-color: white;
-}
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Escurece o fundo */
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 9; /* menor que o menu */
+  border-radius: 14px;
+  text-align: center;
 }
 
-/* Quando ativo */
-.overlay.open {
-  opacity: 1;
-  pointer-events: all;
-}
-.main-container {
-  display: grid;
-  grid-template-areas:
-    "menu"
-    "ilustracao"
-    "textAndBtn"
-    "rodape";
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto auto;
+/* Esconda os botões de desktop (após a limpeza) */
+.desktop-login-btns {
+  display: none;
 }
 @media (min-width: 425px) {
   .main-imagem img {
@@ -245,83 +218,149 @@ nav#sidebar-menu button {
   }
 }
 @media (min-width: 1024px) {
-  .main-imagem img {
-    width: 100%;
-    max-width: 375px;
+  .header {
+    /* Garante que o header se estique, mas alinha o logo e o nav */
+    padding: 30px 0;
+    justify-content: flex-start; /* Alinha tudo à esquerda */
   }
+
+  /* Esconde o menu mobile no desktop */
+  .header .menu {
+    display: none;
+  }
+  .flex-btn {
+    display: none;
+  }
+
+  /* O main-menu é o container que engloba o logo e o nav */
+  .main-menu {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    grid-area: menu;
+  }
+
+  /* O NAV se torna a barra de navegação principal */
+  #sidebar-menu {
+    /* Reset de Mobile */
+    position: static;
+    transform: none;
+    box-shadow: none;
+    background-color: transparent;
+    height: auto;
+    width: auto;
+
+    /* Flexbox principal: alinha links e botões lado a lado */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1; /* Ocupa o espaço entre a Logo e a borda direita */
+    justify-content: space-between; /* CHAVE: Empurra os links para a esquerda e os botões para a direita */
+    padding-left: 50px; /* Espaço entre a logo e o primeiro link */
+  }
+
+  /* Links de navegação horizontal */
+  nav#sidebar-menu ul {
+    flex-direction: row;
+    padding: 0;
+    gap: 30px;
+  }
+
+  nav#sidebar-menu li {
+    padding: 0;
+  }
+
+  /* Oculta os itens do dropdown, eles serão abertos lateralmente por JS */
+  .dropdown {
+    position: absolute;
+    max-height: none;
+    overflow: visible;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* BOTÕES DE LOGIN DESKTOP (Horizontal) */
+  .login-btns {
+    flex-direction: row; /* DESKTOP: Horizontal */
+    gap: 20px;
+    padding: 0;
+  }
+
+  /* Estilo de Login no Desktop */
+  #login {
+    width: auto;
+    height: auto;
+    padding: 0;
+    padding-top: 0;
+    color: gray;
+  }
+  #login:hover {
+    color: black;
+    border: none;
+    padding-top: 0;
+  }
+
+  /* Estilo de Register no Desktop */
+  #register {
+    width: auto;
+    height: auto;
+    padding: 8px 20px;
+    border-color: gray;
+    color: gray;
+  }
+  #register:hover {
+    background-color: black;
+    color: white;
+    border-color: black;
+  }
+
+  /* LAYOUT DA PÁGINA DESKTOP */
   .main-container {
     grid-template-areas:
       "menu menu"
       "textAndBtn ilustracao"
       "rodape ilustracao";
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr auto;
     grid-template-rows: auto 1fr auto;
     align-items: center;
     padding: 0 100px;
     max-width: 1440px;
     margin: 0 auto;
   }
-  .header .menu {
-    display: none;
+
+  .main-imagem {
+    justify-content: flex-end;
+    height: 100%;
   }
-  #sidebar-menu {
-    display: none;
+
+  .main-imagem img {
+    width: 500px; /* Largura da imagem desktop */
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
   }
-  .header {
-    padding: 30px 0;
-  }
-  .main-menu {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 100px;
-  }
-  .main-menu nav {
-    display: flex;
-  }
-  .logins-btns {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
+
   .learnMore {
-    /* O GRID já alinha horizontalmente, mas o conteúdo precisa ser à esquerda */
     align-items: flex-start;
     text-align: left;
-
-    /* Permite que o texto cresça na vertical */
     height: 100%;
-    display: flex; /* Garante que o height: 100% funcione */
-    flex-direction: column; /* Mantém o layout vertical interno */
-    justify-content: center; /* Centraliza o conteúdo verticalmente dentro do 1fr */
+    justify-content: center;
+    padding: 0 0 0 50px; /* Ajuste o padding para desktop */
+  }
 
-    /* NOVO: Ajuste o tamanho do título para desktop */
-    h1 {
-      font-size: 80px;
-      line-height: 1; /* Melhora a quebra de linha do título */
-    }
+  h1 {
+    font-size: 80px;
+    line-height: 1;
+    margin-bottom: 30px;
   }
-  .rodape {
-    grid-area: rodape; /* Garante que ele use a área correta */
-    /* Remove padding excessivo vertical para telas grandes */
-    padding: 30px 0;
-  }
+
   .footer {
-    /* O footer deve ter 100% da largura da área "rodape" */
+    padding: 40px 0;
     width: 100%;
-    /* Substitui o padding original (60px 20px) que bagunçava o layout */
-    padding: 0;
-    /* Garante espaçamento entre os logos */
-    justify-content: space-between;
+    justify-content: flex-start; /* Alinha à esquerda */
+    gap: 30px; /* Espaço entre os logos */
+    grid-area: rodape;
   }
-  .footer {
-    display: flex;
-    padding: 60px 20px;
-    height: 20px;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-  }
-  header a {
-    padding: 0;
+  .footer img {
+    max-width: 100px;
   }
 }

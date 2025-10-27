@@ -30,7 +30,6 @@ companyBtn.addEventListener("click", () => {
 });
 const desativarBotao = () => {
   loginBtn.classList.remove("active");
-  console.log("Botão desativado!");
 };
 
 loginBtn.addEventListener("click", () => {
