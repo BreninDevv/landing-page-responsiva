@@ -11,9 +11,12 @@ const imagemDown = "images/icon-arrow-down.svg";
 const imagemUp = "images/icon-arrow-up.svg";
 const featureImagem = document.getElementById("featureImg");
 const companyImagem = document.getElementById("companyImg");
+const paddingFeatures = document.getElementById("liFeatures");
+const paddingCompany = document.getElementById("liCompany");
 
 featuresBtn.addEventListener("click", () => {
   featuresMenu.classList.toggle("on");
+  paddingFeatures.classList.toggle("right");
   if (featureImagem.src.includes(imagemDown)) {
     featureImagem.src = imagemUp;
   } else {
@@ -22,6 +25,7 @@ featuresBtn.addEventListener("click", () => {
 });
 companyBtn.addEventListener("click", () => {
   companyMenu.classList.toggle("on");
+  paddingCompany.classList.toggle("right");
   if (companyImagem.src.includes(imagemDown)) {
     companyImagem.src = imagemUp;
   } else {
