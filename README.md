@@ -21,3 +21,4 @@ Praticar conceitos de **design responsivo**, garantindo uma boa experiência em 
 
 ## 🚀 Preview
 > Projeto estático focado em responsividade.
+
